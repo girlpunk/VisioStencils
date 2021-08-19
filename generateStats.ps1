@@ -29,6 +29,8 @@ $Visio = New-Object -ComObject Visio.Application
     Start-Sleep 1
 }
 
+$Visio.Quit()
+
 [System.Runtime.Interopservices.Marshal]::ReleaseComObject($Visio) | Out-Null
 
 Write-Host "Old template files:" (Get-ChildItem -Recurse -Include "*.vss").Count
